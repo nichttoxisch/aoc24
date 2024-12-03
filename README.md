@@ -9,7 +9,7 @@ cc build.c -o build # -DCC="\"clang\""
 
 ## Documentation
 
-Documentation is not complete. An incomplete documentation is also available via the [testfile](test/test.c). Just read the source.
+Documentation is not complete. An incomplete documentation is also available via the [testfile](tests/test.c). Just read the source.
 
 ### STDR As a build script 
  ```c
