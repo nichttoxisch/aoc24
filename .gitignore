@@ -1,0 +1,4 @@
+.vscode
+**/*solution
+*.old
+build
