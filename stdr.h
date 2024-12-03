@@ -66,6 +66,8 @@ typedef char* stdr_cstr_t;
 #define array_last stdr_array_last
 #define forr stdr_forr
 
+#define ALLOCATOR_LIBC STDR_ALLOCATOR_LIBC
+
 #endif
 
 #ifdef CC
@@ -262,8 +264,10 @@ stdr_bool stdr_build_is_current(stdr_str_t infile, stdr_str_t outfile);
 
 #ifdef STDR_IMPLEMENTATION
 
+#define _XOPEN_SOURCE
 #define _GNU_SOURCE
 #include <assert.h>
+#include <signal.h>
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -656,7 +660,7 @@ stdr_bool stdr_str_contains(stdr_str_t a, stdr_str_t pattern) {
 }
 
 stdr_bool stdr_str_starts_with(stdr_str_t a, stdr_str_t pattern) {
-  if (a.size < pattern.size) return FALSE;
+  if (a.size < pattern.size) return STDR_FALSE;
   a.size = pattern.size;
   return stdr_str_eq(a, pattern);
 }

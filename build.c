@@ -1,5 +1,5 @@
 #ifndef CC
-#define CC "cc"
+#define CC "gcc"
 #endif
 
 #define STDR_IMPLEMENTATION
@@ -45,8 +45,22 @@ void build_advent(str_t file) {
   stdr_cmd_delete(&cmd);
 }
 
+void build_run_test(void) {
+  stdr_cmd_t cmd = {0};
+  stdr_cmd_append_cc(&cmd);
+  stdr_cmd_append_all(&cmd, S("tests/test.c"), S("-o"), S("test"), INC,
+                      S("-lcriterion"));
+  stdr_cmd_run_reset(&cmd);
+
+  stdr_cmd_append_all(&cmd, S("./test"), S("--always-succeed"), S("--verbose"));
+  stdr_cmd_run_reset(&cmd);
+  stdr_cmd_delete(&cmd);
+}
+
 int main(int argc, char** argv) {
-  STDR_BUILD_SELF(argc, argv);
+  STDR_BUILD_SELF(argc, argv)
+
+  build_run_test();
 
   build_advent(S("day_00/solution.c"));
   build_advent(S("day_01/solution.c"));
