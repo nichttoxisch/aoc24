@@ -41,11 +41,18 @@ int main(void) {
   array_append(&xs, 7);
   array_append(&xs, 8);
   array_append(&xs, 7);
+
+  for (usize i = 0; i < array_count(xs); i++) {
+    printf("%ld, ", xs[i]);
+  }
+  printf("\n");
+
   forr (i64, x, xs) {
     stdr_stdout_fmt(S("%i, "), *x);
   }
   stdr_stdout_fmt(S("\n"), NULL);
-  array_delete(&xs)
+
+ array_delete(&xs)
 }
 ```
 
