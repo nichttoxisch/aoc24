@@ -61,9 +61,9 @@ int main(int argc, char** argv) {
   STDR_BUILD_SELF(argc, argv)
 
   build_run_test();
-
   build_advent(S("day_00/solution.c"));
   build_advent(S("day_01/solution.c"));
   build_advent(S("day_02/solution.c"));
   build_advent(S("day_03/solution.c"));
+  build_advent(S("day_04/solution.c"));
 }
