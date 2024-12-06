@@ -120,10 +120,10 @@ i64 part_2(str_t input) {
     if (updates[i] == NULL) continue;
     array(i64) update = updates[i];
 
-    for (usize j = 0; j < array_count(update); j++) {
-      printf("%ld,", update[j]);
-    }
-    printf("\n");
+    // for (usize j = 0; j < array_count(update); j++) {
+    //   printf("%ld,", update[j]);
+    // }
+    // printf("\n");
 
     sum += update[array_count(update) / 2];
   }
@@ -134,7 +134,7 @@ i64 part_2(str_t input) {
   };
   array_delete(&updates);
 
-  printf("%ld\n", sum);
+  // printf("%ld\n", sum);
   return sum;
 }
 
@@ -146,7 +146,7 @@ i32 main(void) {
   STDR_ASSERT(part_1(example) == 143);
   STDR_ASSERT(part_1(input) == 6242);
   STDR_ASSERT(part_2(example) == 123);
-  STDR_ASSERT(part_2(input) == 0);
+  STDR_ASSERT(part_2(input) == 5169);
 
   stdr_arena_ctx_delete();
 

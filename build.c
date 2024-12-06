@@ -67,4 +67,5 @@ int main(int argc, char** argv) {
   build_advent(S("day_03/solution.c"));
   build_advent(S("day_04/solution.c"));
   build_advent(S("day_05/solution.c"));
+  build_advent(S("day_06/solution.c"));
 }

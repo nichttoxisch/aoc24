@@ -147,7 +147,7 @@ i32 main(void) {
   STDR_ASSERT(part_1(example) == 18);
   STDR_ASSERT(part_1(input) == 2447);
   STDR_ASSERT(part_2(example) == 9);
-  STDR_ASSERT(part_2(input) == 2447);
+  STDR_ASSERT(part_2(input) == 1868);
 
   stdr_arena_ctx_delete();
 
