@@ -5,7 +5,7 @@
 #define STDR_IMPLEMENTATION
 #include "stdr.h"
 
-#define CFLAGS S("-std=c11"), S("-ggdb"), S("-O0")
+#define CFLAGS S("-std=c11"), S("-ggdb"), S("-O0"), S("-lm")
 
 #define WFLAGS                                                               \
   S("-Wall"), S("-Wextra"), S("-Wconversion"), S("-Wsign-conversion"),       \
@@ -68,4 +68,5 @@ int main(int argc, char** argv) {
   build_advent(S("day_04/solution.c"));
   build_advent(S("day_05/solution.c"));
   build_advent(S("day_06/solution.c"));
+  build_advent(S("day_07/solution.c"));
 }
